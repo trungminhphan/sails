@@ -7,7 +7,7 @@
 
 module.exports = {
 	list:function(req, res){
-		res.view('backend/user/list', {'text' : 'Phan Minh Trung'})
+		res.view('backend/user/list');
 	},
 	edit:function(req, res){
 		res.view('backend/user/edit');

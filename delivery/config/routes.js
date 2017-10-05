@@ -32,16 +32,19 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   //Font end
-  'get /': {
-    view: 'frontend/homepage',
-  },
-  'get /admin/user': 'UserController.list',
+
+  'get /admin': { view: 'backend/index'},
+  'get /user':          'UserController.list',
+  'get /admin/user':    'UserController.list',
   'get /admin/user/add': {
     view: 'backend/user/add'
   },
-  'get /admin/user/edit': 'UserController.edit'
+  'get /admin/user/edit': 'UserController.edit',
 
   //backend
+  'get /': {
+    view: 'frontend/homepage',
+  },
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

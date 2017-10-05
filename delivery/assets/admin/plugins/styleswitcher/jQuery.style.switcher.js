@@ -1,5 +1,8 @@
 // Theme color settings
 $(document).ready(function(){
+ $(".right-side-toggle").click(function(){
+  laert('Ok');
+ });
 function store(name, val) {
     if (typeof (Storage) !== "undefined") {
       localStorage.setItem(name, val);
@@ -27,7 +30,7 @@ function store(name, val) {
 
 });
  function get(name) {
-    
+
   }
 
 $(document).ready(function(){
