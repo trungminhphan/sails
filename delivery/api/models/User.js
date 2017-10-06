@@ -24,6 +24,7 @@ module.exports = {
   	encryptedPassword: {
   		type: 'string',
   		required: true
+  	}/*,
     toJSON: function(){
       var obj = this.toObject(),
       delete obj.password;
@@ -41,7 +42,9 @@ module.exports = {
 
     require('bcrypt').hash(values.password, 10, function passwordEncrypted(err, encryptedPassword){
       if(err) return next(err);
+    values.encryptedPasswrd = encryptedPassword;
       next();
+    });*/
   }
 };
 
