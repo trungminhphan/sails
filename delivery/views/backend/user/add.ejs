@@ -1,1 +1,44 @@
-ADD
+<%- include ../header %>
+<div class="row page-titles">
+    <div class="col-md-12 align-self-center">
+        <h3 class="text-themecolor">Tài khoản</h3>
+    </div>
+    <div>
+        <a href="#top" class="right-side-toggle waves-effect top waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-arrow-circle-up text-white"></i></a>
+    </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-outline-info">
+        <div class="card-header">
+            <h4 class="m-b-0 text-white">Thêm tài khoản người dùng</h4>
+        </div>
+        <div class="card-body">
+            <form class="m-t-40" novalidate>
+              <div class="form-group">
+                   <label class="control-label">Last Name</label>
+                   <input type="text" name="text" class="form-control" required data-validation-required-message="This field is required">
+              </div>
+               <div class="text-xs-right">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="reset" class="btn btn-inverse">Cancel</button>
+                </div>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include ../footer %>
+ <script>
+    ! function(window, document, $) {
+        "use strict";
+        $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+            checkboxClass: "icheckbox_square-green",
+            radioClass: "iradio_square-green"
+        }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+    }(window, document, jQuery);
+    </script>
