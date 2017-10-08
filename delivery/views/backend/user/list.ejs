@@ -1,10 +1,10 @@
 <%- include ../header %>
 <div class="row page-titles">
     <div class="col-md-12 align-self-center">
-        <h3 class="text-themecolor">Trang chủ</h3>
+        <h3 class="text-themecolor"><a href="/user/add" class="btn btn-info"><i class="icon-user-follow"></i> Thêm mới</a> Tài khoản người dùng</h3>
     </div>
     <div>
-        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+        <a href="#top" class="right-side-toggle waves-effect top waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-arrow-circle-up text-white"></i></a>
     </div>
 </div>
 <div class="container-fluid">
@@ -12,7 +12,33 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    Nội dung trang web...
+                    <div class="table-responsive m-t-40">
+                         <table id="myTable" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Email</th>
+                                    <th>Fullname</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% var i =1;%>
+                            <% users.forEach(function(user){ %>
+                                <tr>
+                                    <td><%=i%></td>
+                                    <td><%=user.email%></td>
+                                    <td><%=user.name%></td>
+                                    <td>
+                                        <a href="/user/delete/<%=user.id%>" class="btn btn-sm btn-danger" onclick="return confirm('Chắc chắn xóa?');">Delete</a>
+                                        <a href="/user/edit/<%=user.id%>" class="btn btn-sm btn-info">Edit</a>
+                                    </td>
+                                </tr>
+                                <% i++ %>
+                            <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

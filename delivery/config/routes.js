@@ -31,17 +31,19 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-  //Font end
+  //Backend
 
-  'get /admin': { view: 'backend/index'},
+  /*'get /admin': { view: 'backend/index'},
+  'get /admin/login': { view: 'backend/login'},
   'get /user':          'UserController.list',
   'get /admin/user':    'UserController.list',
-  'get /admin/user/add': {
-    view: 'backend/user/add'
-  },
-  'get /admin/user/edit': 'UserController.edit',
+  'get /admin/user/add': { view: 'backend/user/add' },
+  'post /admin/user/create': 'UserController.create',
+  'get /admin/user/edit/:id': 'UserController.edit',
+  'post /admin/user/update': 'UserController.update',
+  'get /admin/user/delete/:id': 'UserController.delete',*/
 
-  //backend
+  //forntend
   'get /': {
     view: 'frontend/homepage',
   },
