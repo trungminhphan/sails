@@ -7,7 +7,7 @@
             <h4 class="m-b-0 text-white">Chỉnh sửa tài khoản người dùng</h4>
         </div>
         <div class="card-body">
-            <form action="/user/update" method="POST" class="m-t-40" class="form-horizontal">
+            <form action="/users/update" method="POST" class="m-t-40" class="form-horizontal">
             	<input type="hidden" name="id" id="id" value="<%=user.id%>">
             	<div class="form-group row">
                      <label class="control-label text-right col-md-3">Email</label>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="text-xs-right text-right">
                   <button type="submit" class="btn btn-info"><i class="mdi mdi-content-save"></i> Cập nhật</button>
-                  <a href="/user" class="btn btn-inverse"><i class="mdi mdi-reply-all"></i> Trở về</a>
+                  <a href="/users" class="btn btn-inverse"><i class="mdi mdi-reply-all"></i> Trở về</a>
                 </div>
                 <input type="hidden" name="_csrf" value="<%=_csrf%>">
             </form>
