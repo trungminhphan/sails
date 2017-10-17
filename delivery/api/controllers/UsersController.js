@@ -4,7 +4,7 @@
  * @description :: Server-side logic for managing users
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
+var bcrypt = require('bcrypt');
 module.exports = {
 	index:function(req, res){
 		Users.find({}).exec(function(err, users){
@@ -20,7 +20,7 @@ module.exports = {
 		req.session.flash = {};
 	},
 	create:function(req, res){
-		Users.create(req.params.all(), function userCreated(err, user){
+		Users.create(req.params.all(), function(err, user){
 			if(err) {
 				console.log(err);
 				req.session.flash = { err: err };
@@ -46,7 +46,7 @@ module.exports = {
 			res.view('backend/users/edit', {user: user});
 		});
 	},
-	update: function(req, res){
+	update:function(req, res){
 		var id = req.body.id;
 		var email = req.body.email;
 		var name = req.body.fullname;
@@ -59,19 +59,13 @@ module.exports = {
 		});
 		return false;
 	},
-	delete: function(req, res){
+	delete:function(req, res){
 		Users.destroy({id:req.params.id}).exec(function(err){
 			if(err){
 				res.send(500, {error: 'Database Error'});
 			}
 			res.redirect('/users');
 		});
-	},
-	login:function(req, res){
-		res.view('backend/login');
-	},
-	auth:function(req, res){
-
 	}
 };
 

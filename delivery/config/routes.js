@@ -33,8 +33,11 @@ module.exports.routes = {
   ***************************************************************************/
   //Backend
 
-  /*'get /admin': { view: 'backend/index'},
-  'get /admin/login': { view: 'backend/login'},
+  'get /admin': { view: 'backend/index'},
+  'get /user/login': 'UsersController.login',
+  'post /user/autu': 'UsersController.auth',
+  'get /auth/logout': 'UsersController.logout',
+  /*
   'get /user':          'UserController.list',
   'get /admin/user':    'UserController.list',
   'get /admin/user/add': { view: 'backend/user/add' },
